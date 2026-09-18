@@ -1,11 +1,12 @@
 # MembranaAdWall examples
 
-This repository contains customer-facing iOS and Android integrations for MembranaAdWall SDK.
+This repository contains customer-facing iOS and Android integrations for MembranaAdWall SDK. Each
+platform owns a top-level directory: `iOS/` and `Android/`.
 
 ## iOS
 
-1. Open `MembranaAdWallDemo.xcodeproj`.
-2. Select the `DemoUIKit`, `DemoSwiftUI`, or `DemoObjC` scheme. The matching root folder owns that target's models and sample content.
+1. Open `iOS/MembranaAdWallDemo.xcodeproj`.
+2. Select the `DemoUIKit`, `DemoSwiftUI`, or `DemoObjC` scheme. The matching folder beside the project owns that target's models and sample content.
 
 Each example is commented as publisher integration steps 1-5, from creating the SDK instance
 through granting access in the unlock callback. Follow them in order to see the whole flow.
@@ -40,4 +41,4 @@ Google maintains the canonical list and adds buyers to it over time, so re-check
 [Prepare privacy strategies](https://developers.google.com/ad-manager/mobile-ads-sdk/ios/privacy/strategies) when you update Google Mobile Ads rather than trusting the
 copy committed here.
 
-The project resolves MembranaAdWall SDK from [`notsy-bv/adwall_mobile_sdk_ios_resources`](https://github.com/notsy-bv/adwall_mobile_sdk_ios_resources).
+The `iOS/` sources and committed Xcode project are synchronized from the private SDK repository. The project resolves MembranaAdWall SDK from [`notsy-bv/adwall_mobile_sdk_ios_resources`](https://github.com/notsy-bv/adwall_mobile_sdk_ios_resources). The iOS synchronization leaves Android example directories untouched.
