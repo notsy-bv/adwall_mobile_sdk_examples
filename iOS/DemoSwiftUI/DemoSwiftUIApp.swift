@@ -8,8 +8,8 @@ import UIKit
 /// A second example configuration is available if you want to see a rewarded-only wall, where the
 /// only way past the gate is to watch the rewarded ad. To try it, comment the line below and
 /// uncomment the alternative.
-private let demoAppID = "membrana-media-example"
-// private let demoAppID = "membrana-media-example-rewarded-only"
+private let demoAppID = "membrana-media-demo"
+// private let demoAppID = "membrana-media-demo-rewarded-only"
 
 @main
 struct DemoSwiftUIApp: App {
@@ -92,9 +92,13 @@ final class SwiftUIDemoModel: NSObject, ObservableObject, MembranaAdWallDelegate
         _ adWall: MembranaAdWall,
         contentUnavailableWithReason reason: MembranaAdWallUnavailableReason
     ) {
-        // Capping and no-fill are expected production states. Keep premium content protected and
-        // expose the publisher's own login, subscription, or retry path.
-        status = "No wall available; publisher fallback applied"
+        // Capping and no-fill are expected production states, not errors. `notAllowed` means
+        // frequency capping skipped this wall: leave the article readable and remove any temporary
+        // cover the app added. For other reasons, apply the publisher's own policy, such as leaving
+        // content available or offering login or subscription.
+        status = reason == .notAllowed
+            ? "Wall capped; content left available"
+            : "No wall available; publisher fallback applied"
     }
 
     func adWall(_ adWall: MembranaAdWall, didFailWithError error: NSError) {

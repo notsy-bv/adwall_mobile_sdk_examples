@@ -182,9 +182,15 @@ final class ArticleViewController: UIViewController, MembranaAdWallDelegate {
         _ adWall: MembranaAdWall,
         contentUnavailableWithReason reason: MembranaAdWallUnavailableReason
     ) {
-        // Routine states such as capping and no-fill belong here. Keep premium content protected
-        // and offer the publisher's own login, subscription, or retry path.
-        demoSetPrompt("No wall available; publisher fallback applied")
+        // Routine states such as capping and no-fill belong here; none of them is an error.
+        // `notAllowed` means frequency capping skipped this wall: leave the article readable and
+        // remove any temporary cover the app added. For other reasons, apply the publisher's own
+        // policy, such as leaving content available or offering login or subscription.
+        if reason == .notAllowed {
+            demoSetPrompt("Wall capped; content left available")
+        } else {
+            demoSetPrompt("No wall available; publisher fallback applied")
+        }
     }
 
     func adWall(_ adWall: MembranaAdWall, didFailWithError error: NSError) {

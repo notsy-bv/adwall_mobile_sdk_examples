@@ -1,6 +1,5 @@
 #import "AppDelegate.h"
-#import "DemoModels.h"
-#import "ScenarioListViewController.h"
+#import "SceneDelegate.h"
 #import <MembranaAdWallSDK/MembranaAdWallSDK-Swift.h>
 
 /// The App ID Membrana supplies for your application. This example uses Membrana's standard
@@ -10,9 +9,13 @@
 /// only way past the gate is to watch the rewarded ad. To try it, comment the line below and
 /// uncomment the alternative.
 static NSString *DemoAdWallAppID(void) {
-    return @"membrana-media-example";
-    // return @"membrana-media-example-rewarded-only";
+    return @"membrana-media-demo";
+    // return @"membrana-media-demo-rewarded-only";
 }
+
+@interface AppDelegate ()
+@property (nonatomic, strong, readwrite) MBRAdWall *adWall;
+@end
 
 @implementation AppDelegate
 
@@ -38,19 +41,18 @@ static NSString *DemoAdWallAppID(void) {
     // NSAssert(testModeError == nil,
     //          @"Unable to enable AdWall integration testing: %@", testModeError);
 
-    ScenarioListViewController *scenarios = [[ScenarioListViewController alloc] initWithAdWall:adWall];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:scenarios];
-
-    self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
-    self.window.rootViewController = navigationController;
-    [self.window makeKeyAndVisible];
-    // Publisher integration step 2: after the host app has completed its own privacy/consent flow
-    // and permits ad requests, start the SDK exactly once from the application root. Startup runs
-    // asynchronously, so it must not block navigation; screens may open while it is still running.
-    [adWall startWithCompletion:^(NSError *error) {
-        [scenarios completeAdWallStartWithError:error];
-    }];
+    self.adWall = adWall;
     return YES;
+}
+
+- (UISceneConfiguration *)application:(UIApplication *)application
+    configurationForConnectingSceneSession:(UISceneSession *)connectingSceneSession
+                                   options:(UISceneConnectionOptions *)options {
+    UISceneConfiguration *configuration =
+        [[UISceneConfiguration alloc] initWithName:@"Default Configuration"
+                                       sessionRole:connectingSceneSession.role];
+    configuration.delegateClass = SceneDelegate.class;
+    return configuration;
 }
 
 @end

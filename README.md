@@ -11,8 +11,8 @@ platform owns a top-level directory: `iOS/` and `Android/`.
 Each example is commented as publisher integration steps 1-5, from creating the SDK instance
 through granting access in the unlock callback. Follow them in order to see the whole flow.
 
-The apps request the live `membrana-media-example` settings. A second Membrana-owned example App ID,
-`membrana-media-example-rewarded-only`, is available for a wall whose only way past the gate is the
+The apps request the live `membrana-media-demo` settings. A second Membrana-owned example App ID,
+`membrana-media-demo-rewarded-only`, is available for a wall whose only way past the gate is the
 rewarded ad; each example carries it as a commented line beside the active one, so switching is a
 one-line edit. Publishers replace both with the App ID supplied for their application. Settings
 content, placement, and ad-unit selection remain SDK-owned.

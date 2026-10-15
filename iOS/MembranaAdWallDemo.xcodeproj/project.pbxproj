@@ -15,6 +15,8 @@
 		31FF06631E0086754B93876B /* DemoModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B57D84664C1F69E34FDCDDA /* DemoModels.swift */; };
 		3EE9D03B001CF11CED8BF722 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B6BEDDD500E009506EA8BC /* AppDelegate.m */; };
 		5B84A7813BC74EE1254BCAB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1106991A28CE55CC29DFF5DD /* AppDelegate.swift */; };
+		5CE000000000000000000011 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE000000000000000000012 /* SceneDelegate.swift */; };
+		5CE000000000000000000013 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CE000000000000000000014 /* SceneDelegate.m */; };
 		5F3A7781FB3C0558E36901A7 /* MembranaAdWallSDK in Frameworks */ = {isa = PBXBuildFile; productRef = D994343CAD33F7C7C4BA6B56 /* MembranaAdWallSDK */; };
 		5FD52F2F43838B223A63D240 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4F48BA05145EB39188CF6DC /* Foundation.framework */; };
 		6702627B1002D61E5416173C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4F48BA05145EB39188CF6DC /* Foundation.framework */; };
@@ -44,6 +46,9 @@
 		7933A73E2D8AC6B7D906590D /* ScenarioListViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ScenarioListViewController.swift; sourceTree = "<group>"; };
 		8474329D671748D1D4FE1CB3 /* ArticleViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		A4F48BA05145EB39188CF6DC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5CE000000000000000000012 /* SceneDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		5CE000000000000000000014 /* SceneDelegate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		5CE000000000000000000015 /* SceneDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		CC8AE5E6298EB4B84B403B2B /* DemoSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5B6BEDDD500E009506EA8BC /* AppDelegate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DBF64268302D61D63227BF87 /* AppDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -94,6 +99,8 @@
 				3887CEFBA7D9C1141F4976B5 /* DemoModels.m */,
 				2D9C8B02C73FD8A17476E843 /* ScenarioListViewController.h */,
 				5DCC11A54170FA8D7B9E8DEA /* ScenarioListViewController.m */,
+				5CE000000000000000000015 /* SceneDelegate.h */,
+				5CE000000000000000000014 /* SceneDelegate.m */,
 				FCEEFDF38E710DCA82D01900 /* main.m */,
 			);
 			name = DemoObjC;
@@ -127,6 +134,7 @@
 				8474329D671748D1D4FE1CB3 /* ArticleViewController.swift */,
 				6B57D84664C1F69E34FDCDDA /* DemoModels.swift */,
 				7933A73E2D8AC6B7D906590D /* ScenarioListViewController.swift */,
+				5CE000000000000000000012 /* SceneDelegate.swift */,
 			);
 			name = DemoUIKit;
 			path = DemoUIKit;
@@ -293,6 +301,7 @@
 				AA833140AE890DF6CED5DF16 /* ArticleViewController.swift in Sources */,
 				31FF06631E0086754B93876B /* DemoModels.swift in Sources */,
 				1D5C836058D26BF4BA006183 /* ScenarioListViewController.swift in Sources */,
+				5CE000000000000000000011 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,6 +322,7 @@
 				E69DBEACF4304CCE80CFD359 /* ArticleViewController.m in Sources */,
 				BCA4057882DABC658E38ABE6 /* DemoModels.m in Sources */,
 				97AA17975261C514BAAF7F55 /* ScenarioListViewController.m in Sources */,
+				5CE000000000000000000013 /* SceneDelegate.m in Sources */,
 				211083C73469FDC0BBAFB04D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,7 +337,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/DemoObjC/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = media.membrana.adwall.demo.objc;
 				SDKROOT = iphoneos;
@@ -342,7 +352,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/DemoUIKit/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = media.membrana.adwall.demo.uikit;
 				SDKROOT = iphoneos;
@@ -357,7 +367,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/DemoSwiftUI/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = media.membrana.adwall.demo.swiftui;
 				SDKROOT = iphoneos;
@@ -416,7 +426,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -436,7 +446,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/DemoObjC/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = media.membrana.adwall.demo.objc;
 				SDKROOT = iphoneos;
@@ -490,7 +500,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -509,7 +519,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/DemoSwiftUI/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = media.membrana.adwall.demo.swiftui;
 				SDKROOT = iphoneos;
@@ -525,7 +535,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/DemoUIKit/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = media.membrana.adwall.demo.uikit;
 				SDKROOT = iphoneos;
@@ -581,7 +591,7 @@
 			repositoryURL = "https://github.com/notsy-bv/adwall_mobile_sdk_ios_resources.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.1.0;
+				minimumVersion = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

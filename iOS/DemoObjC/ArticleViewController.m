@@ -190,10 +190,15 @@
 }
 
 - (void)adWall:(MBRAdWall *)adWall contentUnavailableWithReason:(MBRUnavailableReason)reason {
-    // Capping and no-fill are expected production states. Keep premium content protected and
-    // provide the publisher's own login, subscription, or retry path.
+    // Capping and no-fill are expected production states, not errors. NotAllowed means frequency
+    // capping skipped this wall: leave the article readable and remove any temporary cover the app
+    // added. For other reasons, apply the publisher's own policy, such as leaving content available
+    // or offering login or subscription.
+    NSString *prompt = reason == MBRUnavailableReasonNotAllowed
+        ? @"Wall capped; content left available"
+        : @"No wall available; publisher fallback applied";
     dispatch_async(dispatch_get_main_queue(), ^{
-        self.navigationItem.prompt = @"No wall available; publisher fallback applied";
+        self.navigationItem.prompt = prompt;
     });
 }
 
