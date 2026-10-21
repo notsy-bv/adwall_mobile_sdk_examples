@@ -79,13 +79,9 @@ final class SwiftUIDemoModel: NSObject, ObservableObject, MembranaAdWallDelegate
     }
 
     func adWallDidUnlockContent(_ adWall: MembranaAdWall) {
-        // Publisher integration step 5: grant access only from the SDK's unlock callback.
+        // Publisher integration step 5: grant access only from the SDK's unlock callback. It also
+        // arrives when the reader closes the rewarded ad without the reward.
         status = "Content unlocked"
-    }
-
-    func adWallDidRejectContent(_ adWall: MembranaAdWall) {
-        // Keep content protected or install the publisher's fallback when access is not earned.
-        status = "Publisher handled rejection"
     }
 
     func adWall(

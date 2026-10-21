@@ -169,13 +169,9 @@ final class ArticleViewController: UIViewController, MembranaAdWallDelegate {
     }
 
     func adWallDidUnlockContent(_ adWall: MembranaAdWall) {
-        // Publisher integration step 5: treat this callback as the successful access grant.
+        // Publisher integration step 5: treat this callback as the successful access grant. It also
+        // arrives when the reader closes the rewarded ad without the reward.
         demoSetPrompt("Unlocked by a rewarded ad")
-    }
-
-    func adWallDidRejectContent(_ adWall: MembranaAdWall) {
-        // Keep content protected or install the publisher's fallback when access is not earned.
-        demoSetPrompt("Ad declined; publisher fallback applied")
     }
 
     func adWall(

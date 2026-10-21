@@ -182,13 +182,6 @@
     });
 }
 
-- (void)adWallDidRejectContent:(MBRAdWall *)adWall {
-    // Keep content protected or install the publisher's fallback when access is not earned.
-    dispatch_async(dispatch_get_main_queue(), ^{
-        self.navigationItem.prompt = @"Publisher handled rejection";
-    });
-}
-
 - (void)adWall:(MBRAdWall *)adWall contentUnavailableWithReason:(MBRUnavailableReason)reason {
     // Capping and no-fill are expected production states, not errors. NotAllowed means frequency
     // capping skipped this wall: leave the article readable and remove any temporary cover the app

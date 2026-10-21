@@ -591,7 +591,7 @@
 			repositoryURL = "https://github.com/notsy-bv/adwall_mobile_sdk_ios_resources.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				minimumVersion = 1.0.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
