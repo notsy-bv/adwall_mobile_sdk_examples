@@ -42,3 +42,36 @@ Google maintains the canonical list and adds buyers to it over time, so re-check
 copy committed here.
 
 The `iOS/` sources and committed Xcode project are synchronized from the private SDK repository. The project resolves MembranaAdWall SDK from [`notsy-bv/adwall_mobile_sdk_ios_resources`](https://github.com/notsy-bv/adwall_mobile_sdk_ios_resources). The iOS synchronization leaves Android example directories untouched.
+
+## Android
+
+1. Open the `Android/` folder in Android Studio. It is one Gradle project that resolves
+   MembranaAdWall SDK from Maven Central.
+2. Run `demo-views` (Android Views in Kotlin, with a Java callback bridge) or `demo-compose`
+   (Jetpack Compose). Each module owns its own content and UI.
+
+Each example offers a whole-page, a partial-page, and a branded wall, and is commented as publisher
+integration steps 1-5 in `DemoApplication.kt` and the article screen, from creating the SDK instance
+through granting access in the unlock callback.
+
+As on iOS, the apps request the live `membrana-media-demo` settings, and `DemoApplication.kt`
+carries `membrana-media-demo-rewarded-only` as a commented alternative, so switching is a one-line
+edit. Each `AndroidManifest.xml` declares Google's sample Google Mobile Ads application ID.
+Publishers replace both the App ID and the Google Mobile Ads application ID with the ones supplied
+for their application.
+
+`DemoApplication.kt` also carries a commented **test integration** call. Uncommenting it enables
+`enableIntegrationTesting()` before `start()`, with Google's test ad units and a capping ledger
+isolated from production; it works only in a debuggable build. Remove or disable it before shipping.
+As on iOS, the host application must finish its privacy and consent flow before calling `start()`.
+
+The examples use `media.membrana:adwall-sdk`, built on the Google Mobile Ads SDK
+(`play-services-ads`). To run them on GMA Next-Gen, replace that line with the commented
+`media.membrana:adwall-sdk-nextgen` line in each module's `build.gradle.kts`; the app code stays the
+same.
+
+[`Android/README.md`](Android/README.md) is the Android SDK guide: installation, manifest setup,
+gating from Views, Compose, and Java, callbacks, consent changes, privacy, and integration testing.
+
+The `Android/` project is synchronized from the private Android SDK repository after each Maven
+Central release. The Android synchronization leaves `iOS/` and this README untouched.
